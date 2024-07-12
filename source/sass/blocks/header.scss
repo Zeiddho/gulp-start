@@ -1,0 +1,95 @@
+.header {
+  background-color: #fff;
+
+  &__container {
+    justify-content: space-between;
+    padding-top: 15px;
+
+    @media (min-width: 768px) {
+      justify-content: flex-start;
+      padding-top: 21px;
+    }
+    @media (min-width: 1728px) {
+      padding-top: 77px;
+    }
+  }
+
+  &__logo {
+    img {
+      display: block;
+      width: 74px;
+      height: 25px;
+    }
+
+    @media (min-width: 768px) {
+      margin-right: 140px;
+      img {
+        width: 93px;
+        height: 31px;
+      }
+    }
+    @media (min-width: 1728px) {
+      margin-right: 363px;
+    }
+  }
+
+  &__nav {
+    margin-right: 122px;
+  }
+
+  &__list {
+    display: none;
+    color: #000000;
+    font-weight: 400;
+
+    @media (min-width: 768px) {
+      @include clear-list;
+      display: flex;
+      font-size: 16px;
+      line-height: 25px;
+      padding-top: 5px;
+      a {
+        padding: 12px;
+      }
+    }
+    @media (min-width: 1728px) {
+      font-size: 24px;
+      line-height: 37px;
+      a {
+        padding: 18px;
+      }
+    }
+  }
+
+  &__user-action {
+    display: flex;
+    align-items: center;
+    gap: 29px;
+    margin-left: auto;
+
+    @media (min-width: 768px) {
+      gap: 44px;
+    }
+  }
+
+  &__button {
+    @include clear-button;
+
+    img {
+      width: 19px;
+      height: 17px;
+
+      @media (min-width: 768px) {
+        width: 29px;
+        height: 27px;
+      }
+    }
+  }
+
+  &__burger {
+    @media (min-width: 768px) {
+      display: none;
+    }
+  }
+}
+

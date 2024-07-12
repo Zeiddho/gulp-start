@@ -1,0 +1,15 @@
+.container {
+  max-width: 1560px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+
+  @media (min-width: 768px) {
+    padding: 0 20px;
+  }
+
+  @media (min-width: 1728px) {
+    padding: 0 84px;
+  }
+}
