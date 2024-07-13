@@ -4,6 +4,7 @@
   &__container {
     justify-content: space-between;
     padding-top: 15px;
+    display: flex;
 
     @media (min-width: 768px) {
       justify-content: flex-start;
@@ -15,26 +16,31 @@
   }
 
   &__logo {
+    margin-right: auto;
+
+    @media (min-width: 768px) {
+      margin-right: 140px;
+    }
+
+    @media (min-width: 1728px) {
+      margin-right: 363px;
+    }
+
     img {
       display: block;
       width: 74px;
       height: 25px;
     }
-
     @media (min-width: 768px) {
-      margin-right: 140px;
       img {
         width: 93px;
         height: 31px;
       }
     }
-    @media (min-width: 1728px) {
-      margin-right: 363px;
-    }
   }
 
   &__nav {
-    margin-right: 122px;
+    margin: auto;
   }
 
   &__list {
@@ -47,14 +53,20 @@
       display: flex;
       font-size: 16px;
       line-height: 25px;
-      padding-top: 5px;
+    }
+
+    @media (min-width: 1728px) {
+      font-size: 24px;
+      line-height: 37px;
+    }
+
+    @media (min-width: 768px) {
       a {
         padding: 12px;
       }
     }
+
     @media (min-width: 1728px) {
-      font-size: 24px;
-      line-height: 37px;
       a {
         padding: 18px;
       }
