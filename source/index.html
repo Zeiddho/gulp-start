@@ -15,6 +15,10 @@
         </a>
 
         <nav class="header__nav">
+          <button class="header__close">
+            <img src="img/close.svg" alt="">
+          </button>
+
           <ul class="header__list">
             <li class="header__list-item">
               <a>Главная</a>
@@ -26,21 +30,35 @@
               <a href="#">Контакты</a>
             </li>
           </ul>
+
+          <div class="header__contacts">
+            <p>Следи за нами<br>в социальных сетях:</p>
+
+            <ul class="header__social social">
+              <li class="social__item">
+                <a href=""><img src="img/telegram.svg" alt="TG"></a>
+              </li>
+              <li class="social__item">
+                <a href=""><img src="img/vk.svg" alt="VK"></a>
+              </li>
+            </ul>
+          </div>
         </nav>
 
-        <div class="header__user-action">
-          <button class="header__button">
+        <div class="header__icons">
+          <button class="header__search">
             <img src="img/search_icon.svg" alt="search icon">
           </button>
-          <button class="header__button">
+          <button class="header__shopping-cart">
+            <span class="header__pin">0</span>
             <img src="img/shopping_cart_icon.svg" alt="shopping cart icon">
           </button>
-          <button class="header__button header__burger">
+          <button class="header__burger">
             <img src="img/menu_icon.svg" alt="">
           </button>
         </div>
 
-      </div> <!-- container -->
+      </div>
     </header>
   </body>
 </html>
