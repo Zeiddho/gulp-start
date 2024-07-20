@@ -1,4 +1,9 @@
 .social {
   @include clear-list;
+  display: flex;
+  &__item {
+    a {
+      padding: 11px;
+    }
+  }
 }
-

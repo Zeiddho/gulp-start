@@ -15,8 +15,8 @@
   }
 
   &__burger {
-    position: relative;
     @include clear-button;
+    position: relative;
     img {
       width: 17px;
       height: 15px;
@@ -90,9 +90,7 @@
   }
 
   &__social {
-    display: flex;
     justify-content: flex-end;
-    gap: 21px;
   }
 
   &__logo {
@@ -119,12 +117,14 @@
   &__contacts {
     display: none;
     margin-top: auto;
-    padding: 0 12px 22px 12px;
+    padding-bottom: 20px;
 
     p {
       color: #000000;
       font-size: 12px;
       line-height: 18px;
+      padding-left: 11px;
+      padding-right: 11px;
     }
   }
 
@@ -171,9 +171,9 @@
   }
 
   &__list {
+    @include clear-list;
     color: #000000;
     font-weight: 400;
-    @include clear-list;
     font-size: 20px;
     line-height: 24px;
 
@@ -211,9 +211,19 @@
     }
 
     @media (max-width: 767px) {
-      & :first-child a {
+      display: flex;
+      flex-direction: column;
+
+      & li:first-child a {
         border-top: 1px solid #D9D9D9;
         padding-top: 12px;
+        order: 1;
+      }
+      & li:nth-child(2) {
+        order: 3;
+      }
+      & li:nth-child(3) {
+        order: 2;
       }
     }
   }
