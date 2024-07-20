@@ -3,7 +3,11 @@
   display: flex;
   &__item {
     a {
-      padding: 11px;
+      display: block;
+      padding: 9px 11px 11px 11px;
+    }
+    img {
+      display: block;
     }
   }
 }
