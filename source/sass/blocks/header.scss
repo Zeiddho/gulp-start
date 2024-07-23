@@ -106,7 +106,6 @@
   }
 
   &__logo {
-
     img {
       display: block;
       width: 74px;
@@ -248,131 +247,6 @@
       min-width: 17px;
       height: 17px;
       font-size: 11px;
-    }
-  }
-}
-
-.hero {
-  &__container {
-    @media (min-width: 1728px) {
-      display: flex;
-      justify-content: space-between;
-      position: relative;
-      z-index: 3;
-    }
-  }
-
-  &__content {
-    margin-bottom: 54px;
-
-    @media (min-width: 768px) {
-      margin-bottom: 72px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    @media (min-width: 1728px) {
-      display: block;
-      margin-bottom: 202px;
-      padding-top: 340px;
-    }
-  }
-
-  &__product {
-    padding-top: 28px;
-    padding-bottom: 35px;
-    background-image:
-      url('../img/ultimate.svg'),
-      linear-gradient(180deg, #E4E4E4 0%, #FAFAFA 100%);
-    background-repeat: no-repeat, no-repeat;
-    background-size: 100% auto;
-    margin-left: -10px;
-    margin-right: -10px;
-    font-weight: 500;
-    text-align: center;
-
-    @media (min-width: 768px) {
-      padding-top: 56px;
-      padding-bottom: 40px;
-      margin-left: -20px;
-      margin-right: -20px;
-    }
-
-    @media (min-width: 1728px) {
-      padding-top: 316px;
-      background: transparent;
-
-      &::before {
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 44%;
-        width: calc(50vw + 7%);
-        background-image:
-          url('../img/ultimate-vertical.svg'),
-          linear-gradient(90deg, #E4E4E4 0%, #FAFAFA 100%);
-        background-position: bottom left;
-        background-repeat: no-repeat;
-        content: '';
-        z-index: 1;
-      }
-    }
-  }
-
-  &__photo {
-    width: 296px;
-    height: 179px;
-    margin-bottom: 55px;
-    filter: drop-shadow(0px 0px 45.8px #0000000D);
-
-    @media (min-width: 768px) {
-      width: 504px;
-      height: 305px;
-      margin-bottom: 56px;
-    }
-
-    @media (min-width: 1728px) {
-      width: 783px;
-      height: 474px;
-      margin-bottom: 117px;
-      position: relative;
-      z-index: 2;
-    }
-  }
-
-  &__name {
-    display: block;
-    font-size: 24px;
-    line-height: 21px;
-    margin-bottom: 11px;
-
-    @media (min-width: 768px) {
-      font-size: 38px;
-      line-height: 34px;
-      margin-bottom: 15px;
-    }
-
-    @media (min-width: 1728px) {
-      position: relative;
-      z-index: 2;
-    }
-  }
-
-  &__price {
-    display: block;
-    font-size: 20px;
-    line-height: 18px;
-    color: #00000080;
-
-    @media (min-width: 768px) {
-      font-size: 32px;
-      line-height: 29px;
-    }
-
-    @media (min-width: 1728px) {
-      position: relative;
-      z-index: 2;
     }
   }
 }
