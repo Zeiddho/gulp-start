@@ -4,6 +4,7 @@
 */
 
 @mixin clear-button {
+  display: block;
   box-shadow: none;
   border: none;
   background-color: transparent;
