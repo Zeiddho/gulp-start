@@ -1,5 +1,16 @@
 .header {
-  background-color: #fff;
+  margin-bottom: 41px;
+
+  @media (min-width: 768px) {
+    margin-bottom: 59px;
+  }
+
+  @media (min-width: 1728px) {
+    margin-bottom: 0px;
+    position: absolute;
+    width: 100%;
+    z-index: 6;
+  }
 
   &__close {
     @include clear-button;
@@ -17,6 +28,7 @@
   &__burger {
     @include clear-button;
     position: relative;
+
     img {
       width: 17px;
       height: 15px;
@@ -94,14 +106,6 @@
   }
 
   &__logo {
-    @media (min-width: 768px) {
-      margin-right: 140px;
-    }
-
-    @media (min-width: 1728px) {
-      margin-right: 363px;
-    }
-
     img {
       display: block;
       width: 74px;
@@ -141,18 +145,10 @@
       text-align: right;
       justify-content: flex-start;
       height: 100vh;
-
       right: 0;
       top: 0;
       width: 57%;
-
-      box-shadow: 0px 2.32px 1.97px 0px #00000006;
-      box-shadow: 0px 5.39px 4.58px 0px #00000009;
-      box-shadow: 0px 9.68px 8.22px 0px #0000000B;
-      box-shadow: 0px 16.06px 13.65px 0px #0000000C;
-      box-shadow: 0px 26.45px 22.49px 0px #0000000E;
-      box-shadow: 0px 46.23px 39.3px 0px #00000011;
-      box-shadow: 0px 100px 85px 0px #00000017;
+      box-shadow: 0px 2.32px 1.97px 0px #00000006, 0px 5.39px 4.58px 0px #00000009, 0px 9.68px 8.22px 0px #0000000B, 0px 16.06px 13.65px 0px #0000000C, 0px 26.45px 22.49px 0px #0000000E, 0px 46.23px 39.3px 0px #00000011, 0px 100px 85px 0px #00000017;
     }
 
     @media (min-width: 768px) {
@@ -187,6 +183,7 @@
     @media (min-width: 1728px) {
       font-size: 24px;
       line-height: 37px;
+      margin-right: 200px;
     }
 
     a {
@@ -229,24 +226,6 @@
     }
   }
 
-  &__user-action {
-    display: flex;
-    align-items: center;
-    gap: 28px;
-
-    @media (max-width: 768px) {
-      position: relative;
-      z-index: 1001;
-
-      right: 35px;
-      top: 3px;
-    }
-
-    @media (min-width: 768px) {
-      gap: 44px;
-    }
-  }
-
   &__pin {
     position: absolute;
     left: 13px;
@@ -271,3 +250,4 @@
     }
   }
 }
+

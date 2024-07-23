@@ -1,0 +1,108 @@
+.motivation {
+  &__title {
+    margin-top: 0;
+    margin-bottom: 22px;
+
+    @media (min-width: 768px) {
+      margin-bottom: 72px;
+    }
+
+    @media (min-width: 1728px) {
+      margin-bottom: 78px;
+    }
+  }
+
+  &__small {
+    display: block;
+    font-size: 24px;
+    line-height: 26px;
+    margin-bottom: 10px;
+
+    @media (min-width: 768px) {
+      font-size: 48px;
+      line-height: 53px;
+      margin-bottom: 15px;
+    }
+
+    @media (min-width: 1728px) {
+      font-size: 75px;
+      line-height: 84px;
+      margin-bottom: 0px;
+    }
+  }
+
+  &__medium {
+    display: block;
+    font-size: 36px;
+    line-height: 40px;
+    margin-bottom: 4px;
+
+    @media (min-width: 768px) {
+      font-size: 96px;
+      line-height: 107px;
+      margin-bottom: 18px;
+    }
+
+    @media (min-width: 1728px) {
+      font-size: 75px;
+      line-height: 84px;
+      margin-bottom: 0px;
+    }
+  }
+
+  &__big {
+    display: block;
+    font-size: 62px;
+    line-height: 69px;
+    margin-bottom: 20px;
+
+    @media (min-width: 768px) {
+      font-size: 62px;
+      line-height: 69px;
+      margin-bottom: 0;
+      margin-right: 96px;
+      display: inline-block;
+    }
+
+    @media (min-width: 1728px) {
+      font-size: 75px;
+      line-height: 84px;
+      margin-bottom: 78px;
+      display: block;
+    }
+  }
+
+  &__subtitle {
+    color: #000000BF;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 23px;
+    text-transform: capitalize;
+    margin: 0;
+
+    @media (min-width: 768px) {
+      font-size: 20px;
+      line-height: 30px;
+      display: inline-block;
+    }
+
+    @media (min-width: 1728px) {
+      font-size: 28px;
+      line-height: 43px;
+      display: block;
+    }
+  }
+
+  &__button {
+    width: 100%;
+
+    @media (min-width: 768px) {
+      padding: 22px 124px;
+      width: auto;
+    }
+
+    @media (min-width: 1728px) {
+      padding: 22px 56px;
+    }
+  }
+}
