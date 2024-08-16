@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ваш проект</title>
     <link rel="stylesheet" href="css/style.min.css">
+    <script src="js/script.js" defer></script>
   </head>
   <body>
     <header class="header">
@@ -13,7 +14,8 @@
         <a class="header__logo">
           <img src="img/slick-logo.svg" alt="Логотип магазина Slick">
         </a>
-        <nav class="header__nav">
+
+        <nav class="header__nav">  <!-- header__nav--showed -->
           <button class="header__close">
             <img src="img/close.svg" alt="">
           </button>
@@ -84,6 +86,147 @@
         </div>
       </div><!-- hero -->
 
+      <div class="slideshow">
+        <ul class="slideshow__list">
+          <li class="slideshow__ozon">
+            <a href="#">
+              <img src="img/ozon-logo.svg" alt="">
+            </a>
+          </li>
+          <li class="slideshow__wb">
+            <a href="#">
+              <img src="img/wb-logo.svg" alt="">
+            </a>
+          </li>
+          <li class="slideshow__sbermarket" >
+            <a href="#">
+              <img src="img/sbermarket-logo.svg" alt="">
+            </a>
+          </li>
+          <li class="slideshow__yandex">
+            <a href="#">
+              <img src="img/yandex-market-logo.svg" alt="">
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <section class="most-popular container">
+        <div class="most-popular__wrapper-left">
+          <p class="most-popular__subtitle">Сегодня в тренде</p>
+          <h2 class="most-popular__title">Самые популярные</h2>
+          <span class="most-popular__description">Посмотрите, что чаще всего покупают у нас</span>
+        </div>
+
+        <div class="most-popular__wrapper-right">
+          <ul class="most-popular__list">
+            <li class="most-popular__product">
+              <img class="most-popular__photo" src="img/most-popular-sneaker1.png" alt="">
+              <h3 class="most-popular__name">Running sport shoe</h3>
+              <span class="most-popular__price">3999 ₽</span>
+              <button class="most-popular__button">
+                <img src="img/products-button-arrow.svg" alt="">
+              </button>
+            </li>
+
+            <li class="most-popular__product most-popular__product--showed">
+              <img class="most-popular__photo" src="img/most-popular-sneaker2.png" alt="">
+              <h3 class="most-popular__name">Running sport shoe</h3>
+              <span class="most-popular__price">3999 ₽</span>
+              <button class="most-popular__button">
+                <img src="img/products-button-arrow.svg" alt="">
+              </button>
+            </li> <!-- most-popular__product2 -->
+
+            <li class="most-popular__product most-popular__product--showed">
+              <img class="most-popular__photo" src="img/most-popular-sneaker3.png" alt="">
+              <h3 class="most-popular__name">Running sport shoe</h3>
+              <span class="most-popular__price">3999 ₽</span>
+              <button class="most-popular__button">
+                <img src="img/products-button-arrow.svg" alt="">
+              </button>
+            </li> <!-- most-popular__product3 -->
+          </ul>
+
+          <div class="most-popular__controls controls">
+            <button class="controls__left"></button>
+            <button class="controls__center"></button>
+            <button class="controls__right"></button>
+          </div>
+
+          <button class="most-popular__slider-prev"></button>
+          <button class="most-popular__slider-next"></button>
+
+        </div> <!-- most-popular__wrapper-right-->
+
+        <a class="most-popular__link">Показать все</a>
+      </section>
+
+      <section class="gallery">
+        <div class="container">
+          <div class="gallery__sliders">
+            <ul class="gallery__list">
+              <li class="gallery__item banner">
+                <div class="gallery__wrapper">
+                  <h2 class="banner__title">Ты готов<br>проложить свой путь?</h2>
+                  <button class="gallery__botton banner__button button button--red">См Все</button>
+                  <ul class="banner__products">
+                    <li class="banner__product">
+                      <a class="banner__photo" href="">
+                        <img src="img/gallery-photo1.png" alt="">
+                      </a>
+                    </li>
+                    <li class="banner__product">
+                      <a class="banner__photo" href="">
+                        <img src="img/gallery-photo2.png" alt="">
+                      </a>
+                    </li>
+                    <li class="banner__product">
+                      <a class="banner__photo" href="">
+                        <img src="img/gallery-photo3.png" alt="">
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+
+              <li class="gallery__item banner banner--green">
+                <div class="gallery__wrapper">
+                  <h2 class="banner__title">Ты готов<br>проложить свой путь?</h2>
+                  <button class="gallery__botton banner__button button button--red">См Все</button>
+                  <ul class="banner__products">
+                    <li class="banner__product">
+                      <a class="banner__photo" href="">
+                        <img src="img/gallery-photo1.png" alt="">
+                      </a>
+                    </li>
+                    <li class="banner__product">
+                      <a class="banner__photo" href="">
+                        <img src="img/gallery-photo2.png" alt="">
+                      </a>
+                    </li>
+                    <li class="banner__product">
+                      <a class="banner__photo" href="">
+                        <img src="img/gallery-photo3.png" alt="">
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+
+            <div class="gallery__controls controls">
+              <button class="controls__left controls__left--white"></button>
+              <button class="controls__center controls__center--white"></button>
+              <button class="controls__right controls__right--white"></button>
+            </div>
+
+            <button class="gallery__slider-prev"></button>
+            <button class="gallery__slider-next"></button>
+
+          </div>
+        </div>
+      </section> <!-- gallery -->
       <section class="best-selling container">
         <h2 class="best-selling__title title-lines">
           <span>Best Selling</span>
@@ -94,6 +237,7 @@
         </div>
 
         <div class="best-selling__products product">
+
           <div class="product__item product__item--big product__item--hot">
             <img class="product__photo" src="img/best-selling-sneaker1.png" alt="">
             <h3 class="product__name">Slick formal sneaker shoe</h3>
@@ -131,7 +275,33 @@
           </div>
         </div>
         <button class="best-selling__show-all button">Показать все</button>
-      </section> <!-- best-selling -->
+      </section><!-- best-selling container -->
+
+      <section class="reviews container">
+        <!-- <div class="reviews__title">Отзывы о кроссах</div> -->
+        <h2 class="reviews__title">Отзывы<span class="reviews--hidden"> о кроссах</span></h2>
+
+        <ul class="reviews__list">
+          <li class="reviews__item">
+            <img class="reviews__photo" src="img/review-autor1.png" alt="">
+            <div class="reviews__wrapper">
+              <h3 class="reviews__author">Ava Joshi</h3>
+              <div class="reviews__stars"></div>
+            </div>
+            <p class="reviews__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          </li>
+
+          <li class="reviews__item">
+            <img class="reviews__photo" src="img/review-autor2.png" alt="">
+            <div class="reviews__wrapper">
+              <h3 class="reviews__author">Otis Bisnoy</h3>
+              <div class="reviews__stars reviews__stars--cut"></div>
+            </div>
+            <p class="reviews__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          </li>
+
+        </ul>
+      </section><!-- reviews container -->
     </main>
   </body>
 </html>

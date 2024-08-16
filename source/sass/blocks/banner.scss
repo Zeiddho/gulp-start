@@ -1,0 +1,187 @@
+.banner {
+  text-align: center;
+  padding-top: 40px;
+  padding-bottom: 57px;
+  position: relative;
+  // z-index: 9;
+
+  @media (min-width: 768px) {
+    padding-bottom: 148px;
+  }
+
+  @media (min-width: 1728px) {
+    padding-top: 88px;
+    padding-bottom: 148px;
+  }
+
+
+
+  &::before {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #DC4B54;
+    margin-left: -10px;
+    margin-right: -10px;
+    background-image: url('../img/slick-background-logo.svg');
+    background-position: bottom center;
+    background-repeat: no-repeat;
+    background-size: 94% auto;
+    content: "";
+
+    @media (min-width: 768px) {
+      background-position: bottom left;
+      background-size: 90% auto;
+      margin-left: -20px;
+      margin-right: -20px;
+    }
+
+    @media (min-width: 1728px)  {
+      border-radius: 20px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  &--green {
+    &::before {
+      background-color: #0698039e;
+    }
+  }
+
+  &::after {
+    @media (min-width: 768px) {
+      position: absolute;
+      z-index: 2;
+      background-image: url('../img/banner-legs.png');
+      filter: drop-shadow(0px -20px 94.5px #00000033);
+      top: 0;
+      bottom: 0;
+      left: -60%;
+      right: 0;
+      background-position: bottom;
+      background-repeat: no-repeat;
+      background-size: 43% auto;
+      content: "";
+    }
+
+    @media (min-width: 1728px)  {
+      top: -25%;
+      left: -45%;
+      background-size: 38% auto;
+    }
+  }
+
+  &__title {
+    position: relative;
+    z-index: 5;
+    color: #FFFFFF;
+    font-size: 24px;
+    line-height: 29px;
+    font-weight: 500;
+    margin: 0 0 29px 0;
+
+    @media (min-width: 768px) {
+      font-size: 58px;
+      line-height: 70px;
+      margin: 0 0 81px 0;
+    }
+  }
+
+  &__button {
+    position: relative;
+    z-index: 5;
+    margin-bottom: 50px;
+    width: 100%;
+    font-size: 20px;
+    line-height: 24px;
+
+    @media (min-width: 768px) {
+      margin: 0 auto;
+      margin-bottom: 32px;
+      width:auto;
+      font-size: 28px;
+      line-height: 33px;
+      padding: 16px 59px;
+    }
+
+    @media (min-width: 1728px) {
+      margin-left: 0;
+    }
+  }
+
+
+  &__products {
+    @include clear-list;
+    position: relative;
+    z-index: 5;
+    display: flex;
+    justify-content: space-around;
+
+    @media (min-width: 768px) {
+      justify-content: center;
+      gap: 45px;
+    }
+  }
+
+  &__product {
+    position: relative;
+    z-index: 5;
+    width: 71px;
+    height: 71px;
+    border-radius: 8px;
+    background-color: #FFFFFF;
+    text-align: center;
+
+  }
+
+  &__photo {
+    position: absolute;
+    top: -25%;
+    left: -22%;
+  }
+}
+
+
+// .banner--green {
+//   &::before {
+//     background-color: #0698039e;
+//   }
+// }
+
+// .banner--green {
+//   &::before {
+//     position: absolute;
+//     z-index: 1;
+//     top: 0;
+//     bottom: 0;
+//     left: 0;
+//     right: 0;
+//     background-color: #0698039e;
+//     margin-left: -10px;
+//     margin-right: -10px;
+
+//     background-image: url('../img/slick-background-logo.svg');
+//     background-position: bottom center;
+//     background-repeat: no-repeat;
+//     background-size: 94% auto;
+//     content: "";
+
+//     @media (min-width: 768px) {
+//       background-position: bottom left;
+//       background-size: 90% auto;
+//       margin-left: -20px;
+//       margin-right: -20px;
+//     }
+
+//     @media (min-width: 1728px)  {
+//       border-radius: 20px;
+//       margin-left: auto;
+//       margin-right: auto;
+//     }
+//   }
+// }
+

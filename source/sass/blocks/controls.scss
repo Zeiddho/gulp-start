@@ -1,0 +1,53 @@
+.controls {
+  $bl: &;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+
+
+  &__left {
+    background-color: #000000;
+    border-color: transparent;
+    min-width: 11px;
+    height: 11px;
+    border-radius: 11px;
+    padding: 0 3px;
+
+  }
+
+  &__center {
+    position: relative;
+    top: -1px;
+    background-color: #000000;
+    border-color: transparent;
+    width: 30px;
+    height: 11px;
+    border-radius: 20px;
+    position: relative;
+    margin: 0 20px;
+
+  }
+
+  &__right {
+    background-color: #000000;
+    border-color: transparent;
+    min-width: 11px;
+    height: 11px;
+    border-radius: 11px;
+    padding: 0 3px;
+  }
+
+  #{$bl}__left--white {
+    background-color: #ffff;
+  }
+
+  #{$bl}__center--white {
+    background-color: #ffff;
+  }
+
+  #{$bl}__right--white {
+    background-color: #ffff;
+  }
+}
+
+

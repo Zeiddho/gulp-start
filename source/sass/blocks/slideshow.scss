@@ -1,0 +1,136 @@
+.slideshow {
+  &__list{
+    @include clear-list;
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 23px 0;
+    overflow: hidden;
+    background-color: #000000;
+    margin-bottom: 100px;
+
+    @media (min-width: 768px) {
+      height: 131px;
+    }
+
+    @media (min-width: 1728px) {
+      height: 162px;
+    }
+
+    a {
+      padding: 20px 10px;
+      cursor: pointer;
+    }
+
+    &:hover li {
+      animation-play-state: paused;
+    }
+  }
+
+  &__ozon {
+    animation: stream 12s linear infinite;
+    position: absolute;
+    padding-left: 100%;
+
+    @keyframes stream {
+      0% {
+        transform: translateX(0%);
+      }
+      100% {
+        transform: translateX(-110%);
+      }
+    }
+    img {
+      width: 72px;
+      height: 16px;
+
+      @media (min-width: 768px) {
+        width: 181px;
+        height: 40px;
+      }
+    }
+  }
+
+  &__wb {
+    animation-delay: 3s;
+    animation: stream 12s linear infinite;
+    position: absolute;
+    padding-left: 100%;
+
+    @keyframes stream {
+      0% {
+        transform: translateX(0%);
+      }
+      100% {
+        transform: translateX(-110%);
+      }
+    }
+
+    img {
+      width: 106px;
+      height: 16px;
+
+      @media (min-width: 768px) {
+        width: 266px;
+        height: 40px;
+      }
+    }
+  }
+
+  &__sbermarket {
+    animation-delay: 6s;
+    animation: stream 12s linear infinite;
+    position: absolute;
+    padding-left: 100%;
+
+    @keyframes stream {
+      0% {
+        transform: translateX(0%);
+      }
+      100% {
+        transform: translateX(-110%);
+      }
+    }
+
+    img {
+      width: 119px;
+      height: 16px;
+
+      @media (min-width: 768px) {
+        width: 298px;
+        height: 40px;
+      }
+    }
+  }
+
+  &__yandex {
+    animation-delay: 9s;
+    animation: stream 12s linear infinite;
+    position: absolute;
+    padding-left: 100%;
+
+    @keyframes stream {
+      0% {
+        transform: translateX(0%);
+      }
+      100% {
+        transform: translateX(-110%);
+      }
+    }
+    img {
+      width: 87px;
+      height: 16px;
+
+      @media (min-width: 768px) {
+        width: 209px;
+        height: 40px;
+      }
+    }
+  }
+}
+
+
+
+
+

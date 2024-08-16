@@ -3,6 +3,7 @@
   line-height: 44px;
   text-align: center;
   font-weight: 500;
+  text-transform: capitalize;
 
   @media (min-width: 768px) {
     font-size: 45px;
@@ -37,6 +38,29 @@
       right: -63px;
     }
   }
+
+  &--reviews {
+    span::before,
+    span::after {
+      content: '';
+      transform: translateY(1px);
+
+      @media (min-width: 768px) {
+        left: -71px;
+      }
+    }
+
+    span::after {
+      left: auto;
+      right: -51px;
+
+      @media (min-width: 768px) {
+        right: -71px;
+      }
+    }
+  }
 }
+
+
 
 

@@ -18,6 +18,7 @@
     position: absolute;
     top: 22px;
     right: 11px;
+    cursor: pointer;
 
     img {
       width: 13px;
@@ -28,6 +29,7 @@
   &__burger {
     @include clear-button;
     position: relative;
+    cursor: pointer;
 
     img {
       width: 17px;
@@ -42,6 +44,7 @@
   &__icons {
     display: flex;
     gap: 28px;
+    cursor: pointer;
 
     @media (min-width: 768px) {
       gap: 44px;
