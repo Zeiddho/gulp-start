@@ -4,7 +4,6 @@
   flex-direction: column;
   justify-content: center;
   margin-bottom: 49px;
-
   position: relative;
 
   @media (min-width: 768px) and (max-width: 1728px) {
@@ -17,8 +16,6 @@
     flex-direction: row;
     justify-content: space-between;
     margin-bottom: 30px;
-    // gap: 150px;
-    // width: auto;
   }
 
   &__wrapper-left {
@@ -191,7 +188,6 @@
       left: 84px;
     }
   }
-
 
   &__slider-prev {
     display: none;

@@ -167,9 +167,9 @@
           <div class="gallery__sliders">
             <ul class="gallery__list">
               <li class="gallery__item banner">
-                <div class="gallery__wrapper">
+                <div class="banner__wrapper">
                   <h2 class="banner__title">Ты готов<br>проложить свой путь?</h2>
-                  <button class="gallery__botton banner__button button button--red">См Все</button>
+                  <button class="banner__button button button--red">См Все</button>
                   <ul class="banner__products">
                     <li class="banner__product">
                       <a class="banner__photo" href="">
@@ -188,12 +188,21 @@
                     </li>
                   </ul>
                 </div>
+
+                <div class="gallery__controls controls">
+                  <button class="controls__left controls__left--white"></button>
+                  <button class="controls__center controls__center--white"></button>
+                  <button class="controls__right controls__right--white"></button>
+                </div>
+
+                <button class="gallery__slider-prev"></button>
+                <button class="gallery__slider-next"></button>
               </li>
 
               <li class="gallery__item banner banner--green">
-                <div class="gallery__wrapper">
+                <div class="banner__wrapper">
                   <h2 class="banner__title">Ты готов<br>проложить свой путь?</h2>
-                  <button class="gallery__botton banner__button button button--red">См Все</button>
+                  <button class="banner__button button button--red">См Все</button>
                   <ul class="banner__products">
                     <li class="banner__product">
                       <a class="banner__photo" href="">
@@ -212,18 +221,17 @@
                     </li>
                   </ul>
                 </div>
-              </li>
+
+                <div class="gallery__controls controls">
+                  <button class="controls__left controls__left--white"></button>
+                  <button class="controls__center controls__center--white"></button>
+                  <button class="controls__right controls__right--white"></button>
+                </div>
+
+                <button class="gallery__slider-prev"></button>
+                <button class="gallery__slider-next"></button>
+              </li> <!-- gallery__item banner banner--green -->
             </ul>
-
-            <div class="gallery__controls controls">
-              <button class="controls__left controls__left--white"></button>
-              <button class="controls__center controls__center--white"></button>
-              <button class="controls__right controls__right--white"></button>
-            </div>
-
-            <button class="gallery__slider-prev"></button>
-            <button class="gallery__slider-next"></button>
-
           </div>
         </div>
       </section> <!-- gallery -->
@@ -278,7 +286,10 @@
       </section><!-- best-selling container -->
 
       <section class="reviews container">
-        <h2 class="reviews__title">Отзывы<span class="reviews--hidden"> о кроссах</span></h2>
+        <h2 class="reviews__title">
+          Отзывы
+          <span> о кроссах</span>
+        </h2>
         <ul class="reviews__list">
           <li class="reviews__item">
             <img class="reviews__photo" src="img/review-autor1.png" alt="">
