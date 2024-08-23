@@ -12,50 +12,29 @@
 
   span {
     position: relative;
-  }
 
-  span::before,
-  span::after {
-    content: '';
-    width: 41px;
-    height: 3px;
-    background-color: #000;
-    transform: translateY(-2px);
-    top: 50%;
-    position: absolute;
-    left: -51px;
-
-    @media (min-width: 768px) {
-      left: -63px;
-    }
-  }
-
-  span::after {
-    left: auto;
-    right: -51px;
-
-    @media (min-width: 768px) {
-      right: -63px;
-    }
-  }
-
-  &--reviews {
-    span::before,
-    span::after {
+    &::before,
+    &::after {
       content: '';
-      transform: translateY(1px);
+      width: 41px;
+      height: 3px;
+      background-color: #000;
+      transform: translateY(-2px);
+      top: 50%;
+      position: absolute;
+      left: -51px;
 
       @media (min-width: 768px) {
-        left: -71px;
+        left: -63px;
       }
     }
 
-    span::after {
+    &::after {
       left: auto;
       right: -51px;
 
       @media (min-width: 768px) {
-        right: -71px;
+        right: -63px;
       }
     }
   }

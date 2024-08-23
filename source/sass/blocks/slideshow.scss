@@ -1,5 +1,5 @@
 .slideshow {
-  &__list{
+  &__list {
     @include clear-list;
     position: relative;
     display: flex;
@@ -118,6 +118,7 @@
         transform: translateX(-110%);
       }
     }
+
     img {
       width: 87px;
       height: 16px;
@@ -129,8 +130,6 @@
     }
   }
 }
-
-
 
 
 
