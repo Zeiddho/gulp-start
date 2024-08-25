@@ -1,19 +1,10 @@
-const buttonOpened = document.querySelector(".header__burger");
-const menu = document.querySelector('.header__nav');
-const buttonClosed = document.querySelector('.header__close');
+import { closeMenu } from './menu.js';
+closeMenu ();
 
-const closeMenu = () => {
-  menu.classList.remove('header__nav--showed');
-  buttonClosed.removeEventListener('click', closeMenu);
-};
+import products from './products.js';
+import renderProducts from './renderProducts.js';
 
-if (buttonOpened && menu) {
-  buttonOpened.addEventListener('click', () => {
-    menu.classList.add('header__nav--showed');
+const catalogList = document.querySelector('.best-selling__products');
+const catalogItemTemplate = document.querySelector('#product').content;
 
-    if (buttonClosed) {
-      buttonClosed.addEventListener('click', closeMenu);
-    }
-  });
-}
-
+renderProducts(products, catalogItemTemplate, catalogList, true);
