@@ -1,60 +1,58 @@
 .product {
   $bl: &;
 
-  &__item {
-    width: 100%;
-    position: relative;
-    border: 2px solid #DEDEDE;
-    border-radius: 25px;
-    padding: 40px 20px 23px 20px;
+  width: 100%;
+  position: relative;
+  border: 2px solid #DEDEDE;
+  border-radius: 25px;
+  padding: 40px 20px 23px 20px;
 
-    @media (min-width: 768px) {
-      padding: 28px 40px 27px 40px;
-    }
+  @media (min-width: 768px) {
+    padding: 28px 40px 27px 40px;
+  }
 
+  &::after {
+    position: absolute;
+    font-weight: 500;
+    color: #FFFFFF;
+    text-align: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: drop-shadow(8px 7px 16.1px #00000040);
+  }
+
+  &--hot {
     &::after {
-      position: absolute;
-      font-weight: 500;
-      color: #FFFFFF;
-      text-align: center;
-      background-repeat: no-repeat;
-      background-size: cover;
-      filter: drop-shadow(8px 7px 16.1px #00000040);
-    }
+      content: "Hot!";
+      font-size: 18px;
+      line-height: 31px;
+      left: -2px;
+      top: 51px;
+      background-image: url('../img/hot-icon.svg');
+      width: 59px;
+      height: 32px;
 
-    &--hot {
-      &::after {
-        content: "Hot!";
-        font-size: 18px;
-        line-height: 31px;
+      @media (min-width: 768px) {
+        font-size: 36px;
+        line-height: 60px;
         left: -2px;
-        top: 51px;
-        background-image: url('../img/hot-icon.svg');
-        width: 59px;
-        height: 32px;
-
-        @media (min-width: 768px) {
-          font-size: 36px;
-          line-height: 60px;
-          left: -2px;
-          top: 104px;
-          width: 120px;
-          height: 65px;
-        }
+        top: 104px;
+        width: 120px;
+        height: 65px;
       }
     }
+  }
 
-    &--new {
-      &::after {
-        content: "New";
-        font-size: 18px;
-        line-height: 31px;
-        top: 51px;
-        left: -2px;
-        background-image: url('../img/new-icon.svg');
-        width: 59px;
-        height: 32px;
-      }
+  &--new {
+    &::after {
+      content: "New";
+      font-size: 18px;
+      line-height: 31px;
+      top: 51px;
+      left: -2px;
+      background-image: url('../img/new-icon.svg');
+      width: 59px;
+      height: 32px;
     }
   }
 
@@ -113,7 +111,7 @@
     }
   }
 
-  #{$bl}__item--big {
+  &--big {
     @media (min-width: 768px) {
       padding: 60px 40px 50px 40px;
       grid-column: span 2;
@@ -197,5 +195,3 @@
     }
   }
 }
-
-

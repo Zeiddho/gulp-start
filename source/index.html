@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ваш проект</title>
     <link rel="stylesheet" href="css/style.min.css">
-    <script src="js/script.js" defer></script>
   </head>
   <body>
     <header class="header">
@@ -160,7 +159,7 @@
         </div> <!-- most-popular__wrapper-right-->
 
         <a class="most-popular__link">Показать все</a>
-      </section>
+      </section> <!-- most-popular-->
 
       <section class="gallery">
         <div class="container">
@@ -235,6 +234,7 @@
           </div>
         </div>
       </section> <!-- gallery -->
+
       <section class="best-selling container">
         <h2 class="best-selling__title title-lines">
           <span>Best Selling</span>
@@ -244,44 +244,24 @@
           <button class="best-selling__button button button--white">Женские</button>
         </div>
 
-        <div class="best-selling__products product">
+          <template id="product">
+            <div class="product">
+              <a href="https://site.com/" class="product__link"></a>
+              <img class="product__photo" src="img/best-selling-sneaker1.png" alt="Slick formal sneaker shoe">
+              <h3 class="product__name">Slick formal sneaker shoe</h3>
 
-          <div class="product__item product__item--big product__item--hot">
-            <img class="product__photo" src="img/best-selling-sneaker1.png" alt="">
-            <h3 class="product__name">Slick formal sneaker shoe</h3>
-            <div class="product__price">
-              <span class="product__new-price">2999 ₽</span>
-              <span class="product__old-price">4999 ₽</span>
-            </div>
-            <button class="product__button">
-              <img src="img/products-button-arrow.svg" alt="">
-            </button>
-          </div>
+              <div class="product__price">
+                <span class="product__new-price">2999 ₽</span><!-- 2999 ₽ -->
+                <span class="product__old-price">4999 ₽</span>
+              </div>
 
-          <div class="product__item product__item--new">
-            <img img class="product__photo" src="img/best-selling-sneaker2.png" alt="">
-            <h3 class="product__name">Slick sneaker shoe</h3>
-            <div class="product__price">
-              <span class="product__new-price">2999 ₽</span>
-              <span class="product__old-price">4999 ₽</span>
+              <button type="button" class="product__button">
+                <img src="img/products-button-arrow.svg" alt="">
+              </button>
             </div>
-            <button class="product__button">
-              <img src="img/products-button-arrow.svg" alt="">
-            </button>
-          </div>
+          </template>
+          <ul class="best-selling__products"></ul>
 
-          <div class="product__item">
-            <img img class="product__photo" src="img/best-selling-sneaker3.png" alt="">
-            <h3 class="product__name">Slick canvas shoe</h3>
-            <div class="product__price">
-              <span class="product__new-price">2999 ₽</span>
-              <span class="product__old-price">4999 ₽</span>
-            </div>
-            <button class="product__button">
-              <img src="img/products-button-arrow.svg" alt="">
-            </button>
-          </div>
-        </div>
         <button class="best-selling__show-all button">Показать все</button>
       </section><!-- best-selling container -->
 
@@ -309,8 +289,9 @@
             <p class="reviews__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
           </li>
         </ul>
-      </section><!-- reviews container -->
+      </section><!-- reviews-->
     </main>
+    <script src="js/script.js" defer type="module"></script>
   </body>
 </html>
 
