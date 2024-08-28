@@ -7,6 +7,7 @@ export default [
     image: 'img/best-selling-sneaker1.png',
     name: 'Slick formal sneaker shoe',
     price: 2999,
+    oldPrice: 4999,
   },
 
   {
@@ -16,6 +17,7 @@ export default [
     image: 'img/best-selling-sneaker2.png',
     name: 'Slick sneaker shoe',
     price: 2999,
+    oldPrice: 4999,
   },
 
   {
@@ -24,5 +26,6 @@ export default [
     image: 'img/best-selling-sneaker3.png',
     name: 'Slick canvas shoe',
     price: 2999,
+    oldPrice: 4999,
   }
 ]

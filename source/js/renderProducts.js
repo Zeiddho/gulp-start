@@ -20,13 +20,15 @@ export default (products, template, target, isTargetList = false) => {
       const imageEl = itemEl.querySelector('.product__photo');
       const nameEl = itemEl.querySelector('.product__name');
       const priceEl = itemEl.querySelector('.product__new-price');
-      const { id, status, size, link, image, name, price } = product;
+      const oldPriceEl = itemEl.querySelector('.product__old-price')
+      const { id, status, size, link, image, name, price, oldPrice } = product;
 
       itemEl.dataset.productId = id;
       linkEl.href = link;
       imageEl.src = image;
       nameEl.textContent = name;
       priceEl.textContent = `${price} ₽`;
+      oldPriceEl.textContent = `${oldPrice} ₽`;
 
       if(size?.length) {
         itemEl.classList.add(`product--${size}`);
