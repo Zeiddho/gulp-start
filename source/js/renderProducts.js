@@ -21,17 +21,21 @@ export default (products, template, target, isTargetList = false) => {
       const nameEl = itemEl.querySelector('.product__name');
       const priceEl = itemEl.querySelector('.product__new-price');
       const oldPriceEl = itemEl.querySelector('.product__old-price')
-      const { id, status, size, link, image, name, price, oldPrice } = product;
+      const { id, status, isBig, image, name, price, oldPrice } = product;
 
       itemEl.dataset.productId = id;
-      linkEl.href = link;
       imageEl.src = image;
       nameEl.textContent = name;
       priceEl.textContent = `${price} ₽`;
       oldPriceEl.textContent = `${oldPrice} ₽`;
+      // linkEl.href = link;
 
-      if(size?.length) {
-        itemEl.classList.add(`product--${size}`);
+      // if(isBig) {
+      //   itemEl.classList.add(`product--${big}`);
+      // } /* не работает */
+
+      if(isBig) {
+        itemEl.classList.add(`product--${isBig ? 'big' : ''}`);
       }
 
       if(status?.length) {
@@ -44,3 +48,4 @@ export default (products, template, target, isTargetList = false) => {
   target.innerHTML = '';
   target.appendChild(fragment);
 }
+
