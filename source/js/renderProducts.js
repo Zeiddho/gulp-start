@@ -16,23 +16,39 @@ export default (products, template, target, isTargetList = false) => {
 
   products.forEach(product => {
       const itemEl = productEl.cloneNode(true);
-      const linkEl = itemEl.querySelector('.product__link');
       const imageEl = itemEl.querySelector('.product__photo');
       const nameEl = itemEl.querySelector('.product__name');
       const priceEl = itemEl.querySelector('.product__new-price');
-      const oldPriceEl = itemEl.querySelector('.product__old-price')
+      const oldPriceEl = itemEl.querySelector('.product__old-price');
       const { id, status, isBig, image, name, price, oldPrice } = product;
+      const buttonEl = itemEl.querySelectorAll('.product__button');
+      const cartModal = document.querySelector('.product__modal');
+      const cartModalClosed = document.querySelector('.product__close');
+      const productGoOn = document.querySelector('.product__go-on');
+
+      const closeModal = () => {
+        cartModal.classList.remove('product__modal--showed');
+        cartModalClosed.removeEventListener('click', closeModal);
+        productGoOn.classList.remove('product__modal--showed');
+        productGoOn.removeEventListener('click', closeModal);
+      }
+
+      buttonEl.forEach((button) => {
+        button.addEventListener('click', () => {
+          cartModal.classList.add('product__modal--showed');
+
+          if (cartModalClosed && productGoOn) {
+            cartModalClosed.addEventListener('click', closeModal);
+            productGoOn.addEventListener('click', closeModal);
+          }
+        });
+      })
 
       itemEl.dataset.productId = id;
       imageEl.src = image;
       nameEl.textContent = name;
       priceEl.textContent = `${price} ₽`;
       oldPriceEl.textContent = `${oldPrice} ₽`;
-      // linkEl.href = link;
-
-      // if(isBig) {
-      //   itemEl.classList.add(`product--${big}`);
-      // } /* не работает */
 
       if(isBig) {
         itemEl.classList.add(`product--${isBig ? 'big' : ''}`);
@@ -40,7 +56,7 @@ export default (products, template, target, isTargetList = false) => {
 
       if(status?.length) {
         itemEl.classList.add(`product--${status}`);
-    }
+      }
 
       fragment.appendChild(itemEl);
   })
@@ -48,4 +64,3 @@ export default (products, template, target, isTargetList = false) => {
   target.innerHTML = '';
   target.appendChild(fragment);
 }
-
