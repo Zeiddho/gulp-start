@@ -49,10 +49,39 @@
           <button class="header__search">
             <img src="img/search-icon.svg" alt="search icon">
           </button>
-          <button class="header__shopping-cart">
-            <span class="header__pin">0</span>
-            <img src="img/shopping-cart-icon.svg" alt="shopping cart icon">
-          </button>
+
+          <div class="header__shopping-cart">
+            <button class="header__cart-button"><!-- header__shopping-cart -->
+              <span class="header__pin">0</span>
+              <img src="img/shopping-cart-icon.svg" alt="shopping cart icon">
+            </button>
+
+            <div class="header__cart shopping-cart"> <!-- header__cart_active-->
+              <template id="shopping-cart-product">
+                <li class="shopping-cart__item">
+                  <a href="#" class="shopping-cart__link">
+                    <img src="img/best-selling-sneaker3.png" alt="первый товар">
+                    <p>Running sport shoe</p>
+                  </a>
+
+                  <div class="shopping-cart__count">
+                    <button class="shopping-cart__button shopping-cart__button--minus">-</button>
+                    <input class="shopping-cart__input" type="text" name="product-cart__count" placeholder="0">
+                    <button class="shopping-cart__button shopping-cart__button--plus">+</button>
+                  </div>
+                  <span class="shopping-cart__price">3999 ₽</span>
+                </li>
+              </template>
+              <ul class="shopping-cart__list">
+                <h3>Корзина товаров</h3>
+              </ul>
+              <span>Итого:</span>
+              <span class="shopping-cart__total"><span>0</span> шт.</span>
+              <span class="shopping-cart__sum">0 руб.</span>
+              <button class="shopping-cart__order">Оформить заказ</button>
+            </div> <!-- header__cart shopping-cart -->
+          </div>
+
           <button class="header__burger">
             <img src="img/menu-icon.svg" alt="">
           </button>
@@ -86,7 +115,7 @@
         </div>
       </div><!-- hero -->
 
-      <div class="slideshow">
+      <!-- <div class="slideshow">
         <ul class="slideshow__list">
           <li class="slideshow__ozon">
             <a href="#">
@@ -109,7 +138,7 @@
             </a>
           </li>
         </ul>
-      </div>
+      </div> -->
 
       <section class="most-popular container">
         <div class="most-popular__wrapper-left">
@@ -263,18 +292,6 @@
           </template>
           <ul class="best-selling__products"></ul>
 
-          <div class="product__modal">
-            <p class="product__text">
-              Товар успешно<br>добавлен в корзину
-            </p>
-            <button class="product__go-on">
-              Продолжить покупки
-            </button>
-            <button class="product__close">
-              <img src="img/close.svg" alt="">
-            </button>
-          </div>
-
         <button class="best-selling__show-all button">Показать все</button>
       </section><!-- best-selling -->
 
@@ -304,6 +321,20 @@
         </ul>
       </section><!-- reviews-->
     </main>
+
+
+    <div class="modal modal--hidden" id='modal_cart'>
+      <p class="modal__text">
+        Товар успешно<br>добавлен в корзину
+      </p>
+      <button class="modal__go-on">
+        Продолжить покупки
+      </button>
+      <button class="modal__close">
+        <img src="img/close.svg" alt="">
+      </button>
+    </div>
+
     <script src="js/script.js" defer type="module"></script>
   </body>
 </html>

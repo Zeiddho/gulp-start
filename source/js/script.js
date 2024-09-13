@@ -1,6 +1,7 @@
 import { closeMenu } from './menu.js';
 import { getServerData } from './api.js';
 import renderProducts from './renderProducts.js';
+import './product-cart.js'
 closeMenu ();
 
 const catalogList = document.querySelector('.best-selling__products');

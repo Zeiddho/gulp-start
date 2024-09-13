@@ -73,9 +73,24 @@
   }
 
   &__shopping-cart {
-    @include clear-button;
     position: relative;
     z-index: 1002;
+  }
+
+  &__cart {
+    position: absolute;
+    right: 0;
+    min-width: 300px;
+    display: none;
+
+    &_active {
+      display: block !important;
+    }
+  }
+
+  &__cart-button {
+    @include clear-button;
+    cursor: pointer;
 
     img {
       width: 19px;
