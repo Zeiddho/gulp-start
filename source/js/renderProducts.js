@@ -1,4 +1,5 @@
 import { renderCart } from './product-cart.js';
+import { addToStorage } from './localstorage.js';
 export default (products, template, target, isTargetList = false) => {
   const fragment = document.createDocumentFragment();
 
@@ -24,7 +25,8 @@ export default (products, template, target, isTargetList = false) => {
     const { id, status, isBig, image, name, price, oldPrice } = product;
     const buttonEl = itemEl.querySelector('.product__button');
 
-    buttonEl.addEventListener('click', () => {
+    buttonEl.addEventListener('click', (product) => {
+      addToStorage('cart', product);
       renderCart(product, true);
     });
 

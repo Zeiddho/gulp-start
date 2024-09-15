@@ -27,6 +27,6 @@ export const removeFromStorage = (storageName, id) => {
       return;
   }
 
-  localStorage.setItem(storageData, JSON.stringify(storageData));
+  localStorage.setItem(storageName, JSON.stringify(storageData));
 };
 

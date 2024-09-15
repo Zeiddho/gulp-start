@@ -15,7 +15,7 @@ const cartProductTemplate = document.querySelector ('#shopping-cart-product').co
 // const cartOrder = cart.querySelector ('.shopping-cart__order');
 
 /* проходимся по всем продуктам из стореджа */
-export const renderCart = (product, isClick = false) => {
+export const renderCart = (isClick = false) => {
 
   const data = getStorage('cart');
   if (!data?.length) {
@@ -46,6 +46,7 @@ export const renderCart = (product, isClick = false) => {
     clone.querySelector ('.shopping-cart__link img').src = product.image;
     clone.querySelector ('.shopping-cart__link p').textContent = product.name;
     clone.querySelector ('.shopping-cart__price').textContent = `${product.price} ₽`;
+
     clone.querySelector ('.shopping-cart__button--minus').addEventListener('click', () => {
       removeFromStorage('cart', product.id);
       const input = clone.querySelector ('.shopping-cart__input').value;
@@ -64,7 +65,6 @@ export const renderCart = (product, isClick = false) => {
       cartTotal.textContent = Number(cartTotal.textContent) + 1;
     });
 
-
     fragment.append(clone);
   });
 
@@ -72,7 +72,7 @@ export const renderCart = (product, isClick = false) => {
     openModal(modalCart);
   }
   cartList.append(fragment);
-  addToStorage('cart', product);
+  // addToStorage('cart', product);
   cartCount.textContent = cartList.childElementCount;
 
   const cartTotal = cart.querySelector ('.shopping-cart__total');
