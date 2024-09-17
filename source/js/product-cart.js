@@ -1,18 +1,13 @@
 import { getStorage, addToStorage, removeFromStorage } from './localstorage.js';
 import { openModal } from './modal.js';
-console.log(getStorage('cart')); /* здесь уже не видно getStorage*/
 
 const modalCart = document.querySelector ('#modal_cart');
-
 const blockMenu = document.querySelector ('.header__shopping-cart');
 const cart = blockMenu.querySelector ('.shopping-cart');
 const cartList = cart.querySelector ('.shopping-cart__list');
 const cartOpenedButton = blockMenu.querySelector ('.header__cart-button');
 const cartCount = blockMenu.querySelector ('.header__pin');
 const cartProductTemplate = document.querySelector ('#shopping-cart-product').content;
-// const cartTotal = cart.querySelector ('.shopping-cart__total');
-// const cartSum = cart.querySelector ('.shopping-cart__sum');
-// const cartOrder = cart.querySelector ('.shopping-cart__order');
 
 /* проходимся по всем продуктам из стореджа */
 export const renderCart = (isClick = false) => {
@@ -72,11 +67,11 @@ export const renderCart = (isClick = false) => {
     openModal(modalCart);
   }
   cartList.append(fragment);
-  // addToStorage('cart', product);
   cartCount.textContent = cartList.childElementCount;
 
   const cartTotal = cart.querySelector ('.shopping-cart__total');
   cartTotal.textContent = data.length;
+  console.log(data.map(item => item.price));
 };
 
 const openCart = (event) => {

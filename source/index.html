@@ -51,34 +51,40 @@
           </button>
 
           <div class="header__shopping-cart">
-            <button class="header__cart-button"><!-- header__shopping-cart -->
+            <button class="header__cart-button">
               <span class="header__pin">0</span>
               <img src="img/shopping-cart-icon.svg" alt="shopping cart icon">
             </button>
 
             <div class="header__cart shopping-cart"> <!-- header__cart_active-->
+              <h3 class="shopping-cart__title">
+                Корзина товаров
+              </h3>
               <template id="shopping-cart-product">
                 <li class="shopping-cart__item">
                   <a href="#" class="shopping-cart__link">
                     <img src="img/best-selling-sneaker3.png" alt="первый товар">
                     <p>Running sport shoe</p>
                   </a>
-
-                  <div class="shopping-cart__count">
-                    <button class="shopping-cart__button shopping-cart__button--minus">-</button>
-                    <input class="shopping-cart__input" type="text" name="product-cart__count" placeholder="0">
-                    <button class="shopping-cart__button shopping-cart__button--plus">+</button>
+                  <div class="shopping-cart__count-panel">
+                    <div class="shopping-cart__count">
+                      <button class="shopping-cart__button shopping-cart__button--minus">-</button>
+                      <input class="shopping-cart__input" type="text" name="product-cart__count" placeholder="0">
+                      <button class="shopping-cart__button shopping-cart__button--plus">+</button>
+                    </div>
+                    <span class="shopping-cart__price">3999 ₽</span>
                   </div>
-                  <span class="shopping-cart__price">3999 ₽</span>
+
                 </li>
               </template>
-              <ul class="shopping-cart__list">
-                <h3>Корзина товаров</h3>
-              </ul>
-              <span>Итого:</span>
-              <span class="shopping-cart__total"><span>0</span> шт.</span>
-              <span class="shopping-cart__sum">0 руб.</span>
+              <ul class="shopping-cart__list"></ul>
+              <div class="shopping-cart__output">
+                <span class="shopping-cart__in-total">Итого:</span>
+                <span class="shopping-cart__total"><span>0</span> шт.</span>
+                <span class="shopping-cart__sum">0</span>
+              </div>
               <button class="shopping-cart__order">Оформить заказ</button>
+
             </div> <!-- header__cart shopping-cart -->
           </div>
 
@@ -115,7 +121,7 @@
         </div>
       </div><!-- hero -->
 
-      <!-- <div class="slideshow">
+      <div class="slideshow">
         <ul class="slideshow__list">
           <li class="slideshow__ozon">
             <a href="#">
@@ -138,7 +144,7 @@
             </a>
           </li>
         </ul>
-      </div> -->
+      </div>
 
       <section class="most-popular container">
         <div class="most-popular__wrapper-left">
@@ -281,7 +287,7 @@
               <h3 class="product__name">Slick formal sneaker shoe</h3>
 
               <div class="product__price">
-                <span class="product__new-price">2999 ₽</span><!-- 2999 ₽ -->
+                <span class="product__new-price">2999 ₽</span>
                 <span class="product__old-price">4999 ₽</span>
               </div>
 

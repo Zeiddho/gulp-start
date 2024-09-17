@@ -23,11 +23,11 @@ export default (products, template, target, isTargetList = false) => {
     const priceEl = itemEl.querySelector('.product__new-price');
     const oldPriceEl = itemEl.querySelector('.product__old-price');
     const { id, status, isBig, image, name, price, oldPrice } = product;
-    const buttonEl = itemEl.querySelector('.product__button');
+    const button = itemEl.querySelector('.product__button');
 
-    buttonEl.addEventListener('click', (product) => {
+    button.addEventListener('click', () => {
       addToStorage('cart', product);
-      renderCart(product, true);
+      renderCart(true);
     });
 
     itemEl.dataset.productId = id;
