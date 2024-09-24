@@ -22,8 +22,8 @@ export default (products, template, target, isTargetList = false) => {
     const nameEl = itemEl.querySelector('.product__name');
     const priceEl = itemEl.querySelector('.product__new-price');
     const oldPriceEl = itemEl.querySelector('.product__old-price');
-    const { id, status, isBig, image, name, price, oldPrice } = product;
     const button = itemEl.querySelector('.product__button');
+    const { id, status, isBig, image, name, price, oldPrice } = product;
 
     button.addEventListener('click', () => {
       addToStorage('cart', product);
@@ -50,3 +50,4 @@ export default (products, template, target, isTargetList = false) => {
   target.innerHTML = '';
   target.appendChild(fragment);
 }
+

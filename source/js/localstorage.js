@@ -3,15 +3,19 @@ export const getStorage = (storageName) => {
 };
 
 export const addToStorage = (storageName, data) => {
-  let storageArr = [data];
-  const storageData = JSON.parse(localStorage.getItem(storageName));
-
+  let storageData = JSON.parse(localStorage.getItem(storageName));
   if (storageData) {
-
-      storageArr = [...storageData, ...storageArr];
+    const index = storageData.findIndex(item => item.id === data.id);
+    if (index !== -1) {
+      storageData[index].amount++;
+    } else {
+      storageData.push({ ...data, amount: 1 });
+    }
+  } else {
+    storageData = [{ ...data, amount: 1 }];
   }
-  localStorage.setItem(storageName, JSON.stringify(storageArr));
-};
+  localStorage.setItem(storageName, JSON.stringify(storageData));
+}
 
 export const removeFromStorage = (storageName, id) => {
   const storageData = JSON.parse(localStorage.getItem(storageName));
@@ -19,14 +23,14 @@ export const removeFromStorage = (storageName, id) => {
   if(!storageData) {
       return;
   }
-
-  storageData.splice(storageData.map(el => el.id).indexOf(id), 1);
+  const index = storageData.findIndex(el => el.id === id);
+  if (index !== -1) {
+    storageData[index].amount > 0 ? storageData[index].amount-- : 0;
+  }
 
   if(!storageData.length) {
       localStorage.removeItem(storageName);
       return;
   }
-
   localStorage.setItem(storageName, JSON.stringify(storageData));
 };
-

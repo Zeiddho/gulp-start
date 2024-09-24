@@ -1,5 +1,5 @@
 export const openModal = (modal) => {
-  const modalCloseButtons = modal.querySelectorAll('.modal__close');
+  const modalCloseButtons = modal.querySelectorAll('.modal__close--button');
   modal.classList.remove('modal--hidden');
 
   modalCloseButtons.forEach(modalCloseButton => {
