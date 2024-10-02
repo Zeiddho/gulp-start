@@ -44,7 +44,6 @@
   &__icons {
     display: flex;
     gap: 28px;
-    cursor: pointer;
 
     @media (min-width: 768px) {
       gap: 44px;
@@ -73,9 +72,27 @@
   }
 
   &__shopping-cart {
-    @include clear-button;
     position: relative;
     z-index: 1002;
+  }
+
+  &__cart {
+    position: absolute;
+    right: 0;
+    display: none;
+
+    @media (max-width: 400px) {
+      right: -140%;
+    }
+
+    &_active {
+      display: block !important;
+    }
+  }
+
+  &__cart-button {
+    @include clear-button;
+    cursor: pointer;
 
     img {
       width: 19px;
