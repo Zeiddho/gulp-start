@@ -147,7 +147,6 @@
     text-align: center;
   }
 
-
   &__price {
     font-size: 24px;
     line-height: 29px;
@@ -174,32 +173,32 @@
   }
 
   &__order {
-      @include clear-button;
-      background-color: #DC4B54;
-      color: #FFFFFF;
-      font-size: 20px;
-      line-height: 30px;
-      min-width: 260px;
-      height: 63px;
-      border: none;
-      text-transform: capitalize;
-      cursor: pointer;
-      box-shadow:
-        0px 2.32px 1.97px 0px #00000006,
-        0px 5.39px 4.58px 0px #00000009,
-        0px 9.68px 8.22px 0px #0000000B,
-        0px 16.06px 13.65px 0px #0000000C,
-        0px 26.45px 22.49px 0px #0000000E,
-        0px 46.23px 39.3px 0px #00000011,
-        0px 100px 85px 0px #00000017;
+    @include clear-button;
+    background-color: #DC4B54;
+    color: #FFFFFF;
+    font-size: 20px;
+    line-height: 30px;
+    min-width: 260px;
+    height: 63px;
+    border: none;
+    text-transform: capitalize;
+    cursor: pointer;
+    box-shadow:
+      0px 2.32px 1.97px 0px #00000006,
+      0px 5.39px 4.58px 0px #00000009,
+      0px 9.68px 8.22px 0px #0000000B,
+      0px 16.06px 13.65px 0px #0000000C,
+      0px 26.45px 22.49px 0px #0000000E,
+      0px 46.23px 39.3px 0px #00000011,
+      0px 100px 85px 0px #00000017;
 
-      @media (min-width: 768px) {
-        font-size: 24px;
-        line-height: 36px;
-        min-width: 312px;
-        height: 63px;
-        margin-left: auto;
-      }
+    @media (min-width: 768px) {
+      font-size: 24px;
+      line-height: 36px;
+      min-width: 312px;
+      height: 63px;
+      margin-left: auto;
+    }
   }
 }
 

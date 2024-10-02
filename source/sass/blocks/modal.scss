@@ -2,9 +2,8 @@
   position: fixed;
   z-index: 4000;
   top: 50%;
+  transform: translateX(-50%);
   left: 50%;
-  transform: translate(-50%, 0);
-
   background-color: #FBFBFB;
   border-radius: 15px;
   padding: 20px 23px;
@@ -88,5 +87,4 @@
     }
   }
 }
-
 
