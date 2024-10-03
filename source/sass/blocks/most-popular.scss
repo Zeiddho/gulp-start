@@ -1,21 +1,23 @@
 .most-popular {
+  position: relative;
   text-transform: capitalize;
   display: flex;
   flex-direction: column;
   justify-content: center;
   margin-bottom: 49px;
-  position: relative;
 
   @media (min-width: 768px) and (max-width: 1728px) {
     flex-direction: row;
-    justify-content: space-between;
-    max-width: 768px;
+    gap: 51px;
+    margin-bottom: 70px;
   }
 
   @media (min-width: 1728px) {
-    flex-direction: row;
+    gap: 80px;
     justify-content: space-between;
     margin-bottom: 30px;
+    flex-direction: row;
+    margin-bottom: 0px;
   }
 
   &__wrapper-left {
@@ -26,36 +28,50 @@
     }
   }
 
-  &__wrapper-right {
+  &__swiper {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
     @media (min-width: 768px) {
-      position: relative;
-      margin-right: 35px;
+      padding-left: 35px;
+      padding-right: 35px;
     }
 
     @media (min-width: 1728px) {
-      position: relative;
-      display: flex;
-      flex-direction: row;
-      margin-right: 50px;
+      padding-left: 60px;
+      padding-right: 60px;
     }
   }
 
   &__list {
     @include clear-list;
+    margin-bottom: 59px;
+    display: flex;
+    flex-direction: row;
+    height: auto;
+
+    @media (min-width: 768px) and (max-width: 1728px) {
+      max-width: 310px;
+    }
+
     @media (min-width: 1728px) {
       position: relative;
-      gap: 65px;
-
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
     }
+  }
+
+  &__product {
+    position: relative;
+    background-color: #f9f9f9;
+    border: 2px solid #DEDEDE;
+    border-radius: 15px;
+    padding: 0 39px 35px 39px;
   }
 
   &__subtitle {
     position: relative;
     display: block;
     margin: 0 auto;
-
     font-size: 24px;
     line-height: 29px;
     font-weight: 500;
@@ -86,26 +102,6 @@
     line-height: 22px;
     color:#000000BF;
     margin-bottom: 34px;
-  }
-
-  &__product {
-    position: relative;
-    background-color: #f9f9f9;
-    border: 2px solid #DEDEDE;
-    border-radius: 15px;
-    margin-bottom: 18px;
-    padding: 0 39px 35px 39px;
-
-    @media (min-width: 768px) {
-      margin-bottom: 30px;
-    }
-
-    &--showed {
-      display: none;
-      @media (min-width: 1728px) {
-        display: block;
-      }
-    }
   }
 
   &__photo {
@@ -142,20 +138,6 @@
     right: 35px;
   }
 
-  &__controls {
-    margin-bottom: 30px;
-
-    @media (min-width: 768px) {
-      margin: 0;
-    }
-
-    @media (min-width: 1728px) {
-      position: absolute;
-      bottom: -30px;
-      left: 468px;
-    }
-  }
-
   &__link {
     font-size: 20px;
     line-height: 30px;
@@ -175,61 +157,90 @@
       0px 100px 85px 0px #00000017;
 
     @media (min-width: 768px) {
+      position: absolute;
       font-size: 28px;
       line-height: 43px;
       padding: 17px 50px;
-      position: absolute;
       bottom: 90px;
-      left: 20px;
+      transform: translateX(-77%);
     }
 
     @media (min-width: 1728px) {
       bottom: 60px;
-      left: 84px;
+      transform: translateX(0);
     }
   }
 
-  &__slider-prev {
-    display: none;
+  &__pagination {
+    position: absolute;
+    bottom: 30px !important;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    transform: translateX(-50%);
+    left: 50% !important;
+    width: auto !important;
 
     @media (min-width: 768px) {
-      display: block;
-      cursor: pointer;
-      position: absolute;
-      border-color: transparent;
-      background: url('../img/most-popular-slider-left.svg') no-repeat;
-      background-size: 100% auto;
-      width: 15px;
-      height: 27px;
-      left: -36px;
-      top: 168px;
+      bottom: 25px !important;
     }
 
     @media (min-width: 1728px) {
-      left: -50px;
+      transform: translateX(-46%);
+      bottom: 0px !important;
+    }
+
+    &--bullet {
+      background-color: #000000;
+      min-width: 11px;
+      height: 11px;
+      border-radius: 11px;
+      padding: 0 3px;
+      opacity: 1;
+    }
+
+    &--big {
+      width: 30px;
+      height: 11px;
+      border-radius: 20px;
+      transition: width 0.5s;
     }
   }
 
-  &__slider-next {
+  &__slider {
+    @include clear-button;
     display: none;
 
     @media (min-width: 768px) {
       display: block;
       cursor: pointer;
       position: absolute;
+      z-index: 4;
       border-color: transparent;
       background: url('../img/most-popular-slider-right.svg') no-repeat;
       background-size: 100% 100%;
       width: 15px;
       height: 27px;
-      right: -36px;
-      top: 168px;
-    }
 
-    @media (min-width: 1728px) {
-      right: -50px;
+      &--next {
+        right: 0px;
+        top: 41%;
+
+        @media (min-width: 1728px) {
+          right: 0px;
+        }
+      }
+
+      &--prev {
+        transform: translateY(-50%) rotate(180deg);
+        left: 0px;
+        top: 44%;
+
+        @media (min-width: 1728px) {
+          left: 0px;
+        }
+      }
     }
   }
 }
-
 

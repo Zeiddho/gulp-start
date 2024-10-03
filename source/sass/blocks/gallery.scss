@@ -7,30 +7,11 @@
   }
 
   @media (min-width: 1728px) {
-    padding-top: 155px;
     margin-bottom: 124px;
   }
 
   &__list {
     @include clear-list;
-  }
-
-  &__sliders {
-    position: relative;
-  }
-
-  &__controls {
-    position: absolute;
-    z-index: 6;
-    left: 0;
-    right: 0;
-    bottom: 20px;
-
-    @media (min-width: 768px) {
-      bottom: 22px;
-      left: auto;
-      right: 20px;
-    }
   }
 
   &__item {
@@ -42,30 +23,52 @@
     }
   }
 
-  &__slider-prev {
-    display: none;
-    position: absolute;
-    z-index: 4;
-
-    @media (min-width: 768px) {
-      display: block;
-      cursor: pointer;
-      position: absolute;
-      border-color: transparent;
-      background: url('../img/gallery-slider-left.svg') no-repeat;
-      background-size: 100% auto;
-      width: 15px;
-      height: 27px;
-      left: 20px;
-      bottom: 284px;
-    }
-
+  &__swiper {
+    position: relative;
+    overflow: hidden;
     @media (min-width: 1728px) {
-      left: 26px;
+      padding-top: 155px;
     }
   }
 
-  &__slider-next {
+  &__pagination {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    z-index: 6;
+    transform: translateX(-50%);
+    bottom: 20px !important;
+    left: 50% !important;
+    width: auto !important;
+
+    @media (min-width: 768px) {
+      transform: none;
+      left: auto !important;
+      right: 1% !important;
+
+    }
+
+    &--bullet {
+      background-color: #ffff;
+      border-color: transparent;
+      min-width: 11px;
+      height: 11px;
+      border-radius: 11px;
+      padding: 0 3px;
+      opacity: 1;
+    }
+
+    &--big {
+      width: 30px;
+      height: 11px;
+      border-radius: 20px;
+      transition: width 0.5s;
+    }
+  }
+
+  &__slider {
+    @include clear-button;
     display: none;
     position: absolute;
     z-index: 4;
@@ -80,13 +83,26 @@
       width: 15px;
       height: 27px;
       right: 20px;
-      bottom: 284px;
-    }
+      top: 50%;
 
-    @media (min-width: 1728px) {
-      right: 26px;
+      &--next {
+        transform: translateY(-50%);
+
+        @media (min-width: 1728px) {
+          right: 26px;
+          top: 63%;
+        }
+      }
+
+      &--prev {
+        transform: translateY(-50%) rotate(180deg);
+        left: 20px;
+        @media (min-width: 1728px) {
+          top: 63%;
+          left: 26px;
+        }
+      }
     }
   }
 }
-
 
