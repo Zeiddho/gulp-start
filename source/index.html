@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ваш проект</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <link rel="stylesheet" href="css/style.min.css">
   </head>
   <body>
@@ -153,9 +154,13 @@
           <span class="most-popular__description">Посмотрите, что чаще всего покупают у нас</span>
         </div>
 
-        <div class="most-popular__wrapper-right">
-          <ul class="most-popular__list">
-            <li class="most-popular__product">
+        <div class="most-popular__swiper">
+          <div class="most-popular__pagination"></div>
+          <div class="most-popular__slider most-popular__slider--next"></div>
+          <div class="most-popular__slider most-popular__slider--prev"></div>
+
+          <ul class="most-popular__list swiper-wrapper">
+            <li class="most-popular__product swiper-slide">
               <img class="most-popular__photo" src="img/most-popular-sneaker1.png" alt="">
               <h3 class="most-popular__name">Running sport shoe</h3>
               <span class="most-popular__price">3999 ₽</span>
@@ -164,44 +169,55 @@
               </button>
             </li>
 
-            <li class="most-popular__product most-popular__product--showed">
+            <li class="most-popular__product swiper-slide">
               <img class="most-popular__photo" src="img/most-popular-sneaker2.png" alt="">
               <h3 class="most-popular__name">Running sport shoe</h3>
               <span class="most-popular__price">3999 ₽</span>
               <button class="most-popular__button">
                 <img src="img/products-button-arrow.svg" alt="">
               </button>
-            </li> <!-- most-popular__product2 -->
+            </li>
 
-            <li class="most-popular__product most-popular__product--showed">
+            <li class="most-popular__product swiper-slide">
               <img class="most-popular__photo" src="img/most-popular-sneaker3.png" alt="">
               <h3 class="most-popular__name">Running sport shoe</h3>
               <span class="most-popular__price">3999 ₽</span>
               <button class="most-popular__button">
                 <img src="img/products-button-arrow.svg" alt="">
               </button>
-            </li> <!-- most-popular__product3 -->
+            </li>
+
+            <li class="most-popular__product swiper-slide">
+              <img class="most-popular__photo" src="img/most-popular-sneaker1.png" alt="">
+              <h3 class="most-popular__name">Running sport shoe</h3>
+              <span class="most-popular__price">3999 ₽</span>
+              <button class="most-popular__button">
+                <img src="img/products-button-arrow.svg" alt="">
+              </button>
+            </li>
+
+            <li class="most-popular__product swiper-slide">
+              <img class="most-popular__photo" src="img/most-popular-sneaker3.png" alt="">
+              <h3 class="most-popular__name">Running sport shoe</h3>
+              <span class="most-popular__price">3999 ₽</span>
+              <button class="most-popular__button">
+                <img src="img/products-button-arrow.svg" alt="">
+              </button>
+            </li>
           </ul>
-
-          <div class="most-popular__controls controls">
-            <button class="controls__left"></button>
-            <button class="controls__center"></button>
-            <button class="controls__right"></button>
-          </div>
-
-          <button class="most-popular__slider-prev"></button>
-          <button class="most-popular__slider-next"></button>
-
-        </div> <!-- most-popular__wrapper-right-->
-
+        </div>
         <a class="most-popular__link">Показать все</a>
-      </section> <!-- most-popular-->
+      </section>
 
       <section class="gallery">
         <div class="container">
-          <div class="gallery__sliders">
-            <ul class="gallery__list">
-              <li class="gallery__item banner">
+          <div class="gallery__swiper">
+            <div class="gallery__pagination"></div>
+            <div class="gallery__slider gallery__slider--next"></div>
+            <div class="gallery__slider gallery__slider--prev"></div>
+
+            <ul class="gallery__list swiper-wrapper">
+              <li class="gallery__item banner swiper-slide">
                 <div class="banner__wrapper">
                   <h2 class="banner__title">Ты готов<br>проложить свой путь?</h2>
                   <button class="banner__button button button--red">См Все</button>
@@ -223,18 +239,9 @@
                     </li>
                   </ul>
                 </div>
-
-                <div class="gallery__controls controls">
-                  <button class="controls__left controls__left--white"></button>
-                  <button class="controls__center controls__center--white"></button>
-                  <button class="controls__right controls__right--white"></button>
-                </div>
-
-                <button class="gallery__slider-prev"></button>
-                <button class="gallery__slider-next"></button>
               </li>
 
-              <li class="gallery__item banner banner--green">
+              <li class="gallery__item banner banner--green swiper-slide">
                 <div class="banner__wrapper">
                   <h2 class="banner__title">Ты готов<br>проложить свой путь?</h2>
                   <button class="banner__button button button--red">См Все</button>
@@ -256,20 +263,35 @@
                     </li>
                   </ul>
                 </div>
+              </li>
 
-                <div class="gallery__controls controls">
-                  <button class="controls__left controls__left--white"></button>
-                  <button class="controls__center controls__center--white"></button>
-                  <button class="controls__right controls__right--white"></button>
+              <li class="gallery__item banner banner--blue swiper-slide">
+                <div class="banner__wrapper">
+                  <h2 class="banner__title">Ты готов<br>проложить свой путь?</h2>
+                  <button class="banner__button button button--red">См Все</button>
+                  <ul class="banner__products">
+                    <li class="banner__product">
+                      <a class="banner__photo" href="">
+                        <img src="img/gallery-photo1.png" alt="">
+                      </a>
+                    </li>
+                    <li class="banner__product">
+                      <a class="banner__photo" href="">
+                        <img src="img/gallery-photo2.png" alt="">
+                      </a>
+                    </li>
+                    <li class="banner__product">
+                      <a class="banner__photo" href="">
+                        <img src="img/gallery-photo3.png" alt="">
+                      </a>
+                    </li>
+                  </ul>
                 </div>
-
-                <button class="gallery__slider-prev"></button>
-                <button class="gallery__slider-next"></button>
-              </li> <!-- gallery__item banner banner--green -->
+              </li>
             </ul>
           </div>
         </div>
-      </section> <!-- gallery -->
+      </section>
 
       <section class="best-selling container">
         <h2 class="best-selling__title title-lines">
