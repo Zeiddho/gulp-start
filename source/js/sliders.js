@@ -32,20 +32,20 @@ const bestSectionSwiper = new Swiper('.most-popular__swiper', {
 });
 
 const swiper = new Swiper('.gallery__swiper', {
-    spaceBetween: 30,
-    loop: true,
+  spaceBetween: 30,
+  loop: true,
 
-    pagination: {
-      el: '.gallery__pagination',
-      bulletActiveClass: 'gallery__pagination--big',
-      bulletClass: 'gallery__pagination--bullet',
-      clickable: true,
-    },
+  pagination: {
+    el: '.gallery__pagination',
+    bulletActiveClass: 'gallery__pagination--big',
+    bulletClass: 'gallery__pagination--bullet',
+    clickable: true,
+  },
 
-    navigation: {
-      nextEl: '.gallery__slider--next',
-      prevEl: '.gallery__slider--prev',
-    },
-  });
+  navigation: {
+    nextEl: '.gallery__slider--next',
+    prevEl: '.gallery__slider--prev',
+  },
+});
 
 

@@ -128,6 +128,7 @@
   }
 
   &__button {
+    @include clear-button;
     position: absolute;
     width: 40px;
     height: 40px;
@@ -172,6 +173,7 @@
   }
 
   &__pagination {
+    @include clear-button;
     position: absolute;
     bottom: 30px !important;
     display: flex;
@@ -192,7 +194,7 @@
 
     &--bullet {
       background-color: #000000;
-      min-width: 11px;
+      width: 11px;
       height: 11px;
       border-radius: 11px;
       padding: 0 3px;
