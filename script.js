@@ -8,6 +8,5 @@ closeMenu ();
 const catalogList = document.querySelector('.best-selling__products');
 const catalogItemTemplate = document.querySelector('#product').content;
 const dataProducts = getServerData('https://zsa-studio.ru/catalog.php');
-// const dataProducts = getServerData('https://sneakers4life.ru/catalog.php');
 
 dataProducts.then((products) => renderProducts(products, catalogItemTemplate, catalogList, true));

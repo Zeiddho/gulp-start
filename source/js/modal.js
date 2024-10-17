@@ -1,14 +1,26 @@
-export const openModal = (modal) => {
-  const modalCloseButtons = modal.querySelectorAll('.modal__go-on, .modal__close');
-  modal.classList.remove('modal--hidden');
+export class Modal {
+  static modals = document.querySelectorAll('.modal');
+  static #activeClass = 'modal--hidden';
 
-  modalCloseButtons.forEach(modalCloseButton => {
-    modalCloseButton.addEventListener('click', () => {
-      closeModal(modal);
-    });
-  });
+  constructor (id, activeClass) {
+    this.modal = document.querySelector(id);
+    this.modalClose = this.modal.querySelectorAll('.modal__close');
+    this.modalContinue = this.modal.querySelectorAll('.modal__go-on');
+    this.activeClass = activeClass;
+  }
+
+  static closeModal () {
+    Modal.modals.forEach(modal => {
+      if (modal.classList.contains(Modal.#activeClass)) {
+          return
+      }
+      modal.classList.add(Modal.#activeClass);
+    })
 };
 
-export const closeModal = (modal) => {
-  modal.classList.add('modal--hidden');
+  openModal () {
+    this.modal.classList.toggle(this.activeClass);
+    this.modalClose.forEach(modal => modal.addEventListener('click', Modal.closeModal));
+    this.modalContinue.forEach(modal => modal.addEventListener('click', Modal.closeModal));
+  }
 }
