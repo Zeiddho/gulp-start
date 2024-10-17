@@ -1,8 +1,9 @@
-import { getStorage, removeFromStorage } from './localstorage.js';
-import { openModal } from './modal.js';
+import { Storage } from './localstorage.js';
+import { Modal } from './modal.js'
 import formatPrice from './formatPrice.js';
 
-const modalCart = document.querySelector ('#modal_cart');
+const cartStorage = new Storage();
+const modal = new Modal('#modal_cart', 'modal--hidden');
 const blockMenu = document.querySelector ('.header__shopping-cart');
 const cart = blockMenu.querySelector ('.shopping-cart');
 const cartList = cart.querySelector ('.shopping-cart__list');
@@ -10,39 +11,32 @@ const cartOpenedButton = blockMenu.querySelector ('.header__cart-button');
 const cartCount = blockMenu.querySelector ('.header__pin');
 const cartProductTemplate = document.querySelector ('#shopping-cart-product').content;
 
-/* проходимся по всем продуктам из стореджа */
 export const renderCart = (isClick = false) => {
+
   const editProductCount = (clone, cart, product, totalPriceEl, operation = 'plus') => {
-    const productIndex = uniqueData.findIndex(item => item.id === product.id);
-    const input = clone.querySelector ('.shopping-cart__input');
-    const cartTotalEl = cart.querySelector ('.shopping-cart__total span');
+    const input = clone.querySelector('.shopping-cart__input');
+    const cartTotalEl = cart.querySelector('.shopping-cart__total span');
+    let cartData = cartStorage.getStorage('cart');
 
     if (operation === 'plus') {
-      if (productIndex !== -1) {
-        uniqueData[productIndex].amount++;
-      } else {
-        uniqueData.push({ id: product.id, amount: 1});
-      };
-      localStorage.setItem('cart', JSON.stringify(uniqueData));
+      cartData = cartStorage.addToStorage('cart', product);
+      localStorage.setItem('cart', JSON.stringify(cartData));
       cartTotalEl.textContent = Number(cartTotalEl.textContent) + 1;
 
     } else {
-      uniqueData = JSON.parse(localStorage.getItem('cart'));
-      // cartTotalEl.textContent > 0 ? cartTotalEl.textContent = Number(cartTotalEl.textContent) - 1 : 0;/* неправильно работает */
-      cartTotalEl.textContent = uniqueData.reduce((total, item) => total + item.amount, 0);
+      cartData = cartStorage.removeFromStorage('cart', product.id);
+      cartTotalEl.textContent = (cartData ? cartData.reduce((total, item) => total + item.amount, 0) : 0);
     }
-    input.value = uniqueData.find(item => item.id === product.id).amount;
-    totalPriceEl.textContent = formatPrice(uniqueData.reduce((total, item) => total + item.price * item.amount, 0));
-    // totalPriceEl.textContent = cartTotalEl.textContent * product.price;/* так тоже можно? */
+    input.value = cartData && cartData.find(item => item.id === product.id)?.amount || 0;
+    totalPriceEl.textContent = formatPrice(cartData ? cartData.reduce((total, item) => total + item.price * item.amount, 0) : 0);
   }
 
-  const data = getStorage('cart');
-
-  if (!data?.length) {
+  let cartData = cartStorage.getStorage('cart');
+  if (!cartData?.length) {
     return;
   }
 
-  let uniqueData = [...new Set(data.map(JSON.stringify))].map(JSON.parse).sort((a, b) => a.id - b.id);
+  let uniqueData = [...new Set(cartData.map(JSON.stringify))].map(JSON.parse).sort((a, b) => a.id - b.id);
 
   const fragment = document.createDocumentFragment();
   cartList.innerHTML = '';
@@ -57,7 +51,7 @@ export const renderCart = (isClick = false) => {
     clone.querySelector ('.shopping-cart__price').textContent = formatPrice(product.price);
 
     clone.querySelector ('.shopping-cart__button--minus').addEventListener('click', () => {
-      removeFromStorage('cart', product.id);
+      // cartStorage.removeFromStorage('cart', product.id);
       editProductCount(clone, cart, product, totalPriceEl, 'minus');
     });
 
@@ -69,8 +63,9 @@ export const renderCart = (isClick = false) => {
   });
 
   if(isClick) {
-    openModal(modalCart);
+    modal.openModal();
   }
+
   cartList.append(fragment);
   cartCount.textContent = cartList.childElementCount;
 
@@ -103,6 +98,6 @@ const closeCart = (event) => {
 document.addEventListener('click', closeCart);
 cartOpenedButton.addEventListener('click', openCart);
 
-if(getStorage('cart')?.length) {
-    renderCart();
+if(cartStorage.getStorage('cart')?.length) {
+  renderCart();
 }
